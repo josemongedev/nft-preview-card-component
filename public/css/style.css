@@ -1,0 +1,254 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px */
+
+/* ## Typography
+
+### Body Copy
+
+- Font size (paragraph): 18px
+
+### Font
+
+- Family: [Outfit](https://fonts.google.com/specimen/Outfit)
+- Weights: 300, 400, 600 */
+
+@font-face {
+  font-family: "Outfit";
+  src: url(../fonts/Outfit-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(../fonts/Outfit-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(../fonts/Outfit-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+  /* - Soft blue: hsl(215, 51%, 70%) */
+  --clr-primary-soft-blue: hsl(215, 51%, 70%);
+  /* - Cyan: hsl(178, 100%, 50%) */
+  --clr-primary-cyan: hsl(178, 100%, 50%);
+
+  /* ### Neutral */
+  /* - Very dark blue (main BG): hsl(217, 54%, 11%) */
+  --clr-neutral-very-dark-blue-main-bg: hsl(217, 54%, 11%);
+  /* - Very dark blue (card BG): hsl(216, 50%, 16%) */
+  --clr-neutral-very-dark-blue-card-bg: hsl(216, 50%, 16%);
+  /* - Very dark blue (line): hsl(215, 32%, 27%) */
+  --clr-neutral-very-dark-blue-line: hsl(215, 32%, 27%);
+  /* - White: hsl(0, 0%, 100%) */
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  /* - Font size (paragraph): 18px */
+  --fs-base: 18px;
+  /* Font family */
+  --ff-card: "Outfit", sans-serif;
+}
+
+body {
+  font-size: var(--fs-base);
+  font-family: var(--ff-card);
+  background-color: var(--clr-neutral-very-dark-blue-main-bg);
+  display: grid;
+  place-items: center;
+}
+
+/* Links style */
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--white, #fff);
+  font-family: "Outfit";
+}
+
+a:hover {
+  color: var(--cyan, #00fff8);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 375px;
+  height: 667px;
+  padding: 62px 24px;
+  background: var(--very-dark-blue-main-bg, #0d192c);
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    height: 900px;
+    padding: 152px 0px;
+  }
+}
+
+.card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 327px;
+  height: 543px;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: var(--very-dark-blue-card-bg, #15263f);
+  box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 1440px) {
+  .card {
+    width: 350px;
+    height: 596px;
+    gap: 16px;
+  }
+}
+
+.card__image {
+  position: relative;
+  border-radius: 8px;
+  background: url(../images/image-equilibrium.jpg),
+    lightgray 50% / cover no-repeat;
+  width: 278px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 1440px) {
+  .card__image {
+    width: 302px;
+  }
+}
+
+.card__overlay {
+  position: absolute;
+  z-index: 1;
+  width: 302px;
+  height: 302px;
+  border-radius: 8px;
+  opacity: 0.503021240234375;
+  background: var(--cyan, #00fff8);
+  display: none;
+}
+
+.card__image .card__view-icon {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  opacity: 1;
+  top: calc(50% - 48px / 2);
+  left: calc(50% - 48px / 2);
+}
+
+.card__image:hover > .card__overlay,
+.card__image:hover > .card__view-icon {
+  display: block;
+}
+
+.card__heading-name {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card__summary {
+  color: var(--soft-blue, #8bacd9);
+  font-weight: 300;
+  line-height: 26px;
+}
+
+.card__info {
+  width: 100%;
+  margin-block: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__info span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7.7px;
+}
+
+.info__cost {
+  color: var(--cyan, #00fff8);
+  font-size: 16px;
+  font-weight: 600;
+}
+.info__time-left {
+  color: var(--soft-blue, #8bacd9);
+  font-size: 16px;
+}
+
+.card__separator {
+  color: var(--very-dark-blue-line, #2e405a);
+  background: var(--very-dark-blue-line, #2e405a);
+  width: 100%;
+  height: 1px;
+  border: none;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.card__creator {
+  /* margin-top: 6px; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.creator__avatar {
+  width: 33px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  border-radius: 33px;
+  border: 1px solid var(--white, #fff);
+}
+
+.creator__credentials {
+  color: var(--soft-blue, #8bacd9);
+  font-size: 16px;
+}
+
+.credentials__name {
+  color: var(--white, #fff);
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--soft-blue, #8bacd9);
+  padding: 16px;
+}
+
+.attribution__challenge,
+.attribution__developer {
+  color: var(--clr-neutral-white);
+}

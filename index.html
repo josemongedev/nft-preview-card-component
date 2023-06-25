@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | NFT preview card component</title>
+</head>
+
+<body>
+  <main class="container">
+    <article class="card">
+      <a href="./" class="card__image">
+        <div class="card__overlay">
+        </div>
+        <img class="card__view-icon" src="./images/icon-view.svg" alt="View NFT" />
+      </a>
+      <h1>
+        <a href="./" class="card__heading-name">
+          Equilibrium #3429
+        </a>
+      </h1>
+
+      <div class="card__summary">
+        Our Equilibrium collection promotes balance and calm.
+      </div>
+
+      <div class="card__info">
+        <span class="info__cost">
+          <img src="./images/icon-ethereum.svg" alt="NFT cost in Ethereum" />
+          0.041 ETH
+        </span>
+        <span class="info__time-left">
+          <img src="./images/icon-clock.svg" alt="Days left" />
+          3 days left
+        </span>
+      </div>
+
+      <hr class="card__separator" />
+
+      <div class="card__creator">
+        <img class="creator__avatar" src="./images/image-avatar.png" alt="Creator profile picture" />
+        <span class="creator__credentials">
+          Creation of <a href="./" class="credentials__name">Jules Wyvern</a>
+        </span>
+      </div>
+    </article>
+  </main>
+
+  <div class="attribution">
+    <span>
+      Challenge by <a class="attribution__challenge" href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank">Frontend Mentor</a>.
+    </span>
+    <span>
+      Coded by <a class="attribution__developer" href="https://josemonge.dev">Jose Monge</a>.
+    </span>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
